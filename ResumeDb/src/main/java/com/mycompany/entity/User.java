@@ -21,6 +21,7 @@ public class User {
     private String phone;
     private String address;
     private Date birthdate;
+    private String password;
     private Country nationality;
     private Country birthPlace;
     private List<UserSkill> skills;
@@ -54,9 +55,6 @@ public class User {
         this.address = address;
     }
     
-    
-
-
     public int getId() {
         return id;
     }
@@ -115,6 +113,14 @@ public class User {
 
     public Country getBirthPlace() {
         return birthPlace;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public void setBirthPlace(Country birthPlace) {

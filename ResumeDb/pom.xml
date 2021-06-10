@@ -17,6 +17,11 @@
             <version>8.0.23</version>
         </dependency>
 
+        <dependency>
+            <groupId>at.favre.lib</groupId>
+            <artifactId>bcrypt</artifactId>
+            <version>0.4.1</version>
+        </dependency>
     </dependencies>
     <name>ResumeDbApp</name>
 </project>
