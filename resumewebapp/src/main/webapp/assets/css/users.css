@@ -1,75 +1,108 @@
-.row{
+.row {
     margin: 10px;
 }
-.col-md-4{
+
+.col-md-4 {
     margin-top: 20px;
 }
 
-.col-md-12{
+.col-md-12 {
     margin-top: 20px;
 
 }
+
 textarea {
     height: 200px;
 }
-body{
+
+body {
     background-color: black;
-    /*color: white;*/
+    color: white;
 }
-input{
+
+input {
     /*margin: 10px;*/
 }
-select{
+
+select {
     margin: 10px;
 }
-textarea{
+
+textarea {
     margin: 10px;
     background-color: black !important;
 }
-.mycolor{
+
+.mycolor {
     color: chartreuse;
     background-color: black;
 }
-.mycolor#search{
+
+.mycolor#search {
     background-color: #52057b;
     color: lightblue;
 }
+
 input.mycolor:focus-visible {
     background-color: black;
     color: chartreuse;
 }
-label{
+
+label {
     color: #c500fc;
 }
-table{
+
+table {
     color: chartreuse;
 }
-tbody input{
+
+tbody input {
     color: chartreuse;
     background-color: black;
     border: 0px;
 }
-tbody select{
+
+tbody select {
     color: chartreuse;
 }
-thead{
+
+thead {
     color: #c500fc;
 }
-i{
+
+i {
     color: #c500fc;
 }
-i#delete{
+
+i#delete {
     color: red;
 }
-i.btnUserSkill{
+
+i.btnUserSkill {
     color: red;
     font-size: 30px;
 }
-button{
+
+button {
     background-color: black;
 }
 
 textarea:focus {
     background-color: black !important;
     color: chartreuse !important;
+}
+
+.login_background {
+    background: url("");
+}
+
+.login_fix_ {
+    backroud: #d75a5a;
+    border: white;
+    padding-top: 172px;
+    font-style: italic;
+    color: aliceblue;
+    width: 500px;
+    height: 500px;
+
 }
