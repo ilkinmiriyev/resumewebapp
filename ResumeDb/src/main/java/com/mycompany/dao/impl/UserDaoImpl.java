@@ -6,19 +6,16 @@
 package com.mycompany.dao.impl;
 
 import at.favre.lib.crypto.bcrypt.BCrypt;
-import com.mycompany.entity.Country;
-import com.mycompany.entity.User;
 import com.mycompany.dao.inter.AbstractDAO;
 import com.mycompany.dao.inter.UserDaoInter;
-import com.mycompany.dao.inter.UserSkillDaoInter;
-import com.mycompany.entity.UserSkill;
-import com.mycompany.main.Context;
+import com.mycompany.entity.User;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,57 +24,10 @@ import java.util.List;
  */
 public class UserDaoImpl extends AbstractDAO implements UserDaoInter {
 
-    private User getUser(ResultSet rs) throws Exception {
-
-        int id = rs.getInt("id");
-        String name = rs.getString("name");
-        String surname = rs.getString("surname");
-        String phone = rs.getString("phone");
-        String email = rs.getString("email");
-        String address = rs.getString("address");
-        String profileDesc = rs.getString("profile_description");
-        int nationalityId = rs.getInt("nationality_id");
-        int birthplaceId = rs.getInt("birthplace_id");
-
-        String nationalityStr = rs.getString("nationality");
-        String birthplaceStr = rs.getString("birthplace");
-        Date birthdate = rs.getDate("birthdate");
-
-        Country nationality = new Country(nationalityId, null, nationalityStr);
-        Country birthplace = new Country(birthplaceId, birthplaceStr, null);
-
-        UserSkillDaoInter userSkillDao = Context.instanceUserSkillDao();
-        List<UserSkill> userSkill = userSkillDao.getAllSkillByUserId(id);
-
-        return new User(id, name, surname, email, profileDesc, phone, address, birthdate, nationality, birthplace, userSkill);
-
-    }
-
-    private User getUserSimple(ResultSet rs) throws Exception {
-
-        int id = rs.getInt("id");
-        String name = rs.getString("name");
-        String surname = rs.getString("surname");
-        String phone = rs.getString("phone");
-        String email = rs.getString("email");
-        String address = rs.getString("address");
-        String password =rs.getString("password");
-        String profileDesc = rs.getString("profile_description");
-
-        Date birthdate = rs.getDate("birthdate");
-
-
-        User u= new User(id, name, surname, email, profileDesc, phone, address, birthdate, null, null, null);
-        u.setPassword(password);
-        return u;
-
-    }
-
     @Override
     public List<User> getAll(String name, String surname, Integer nationalityId) {
         List<User> result = new ArrayList<>();
-        try (Connection c = connect()) {
-
+        try ( Connection c = connect()) {
 
             String sql = "select u.*, "
                     + "n.nationality, "
@@ -96,7 +46,6 @@ public class UserDaoImpl extends AbstractDAO implements UserDaoInter {
             if (nationalityId != null) {
                 sql += " and u.nationality_id=? ";
             }
-
 
             PreparedStatement stmt = c.prepareStatement(sql);
             int i = 1;
@@ -117,8 +66,8 @@ public class UserDaoImpl extends AbstractDAO implements UserDaoInter {
             ResultSet rs = stmt.getResultSet();
 
             while (rs.next()) {
-                User u = getUser(rs);
-                result.add(u);
+//                User u = getUser(rs);
+//                result.add(u);
             }
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -129,13 +78,13 @@ public class UserDaoImpl extends AbstractDAO implements UserDaoInter {
     @Override
     public User findyByEmailAndPassword(String email, String password) {
         User result = null;
-        try (Connection c = connect()) {
+        try ( Connection c = connect()) {
             PreparedStatement stmt = c.prepareStatement("select * from user where email=? and password =?");
             stmt.setString(1, email);
             stmt.setString(2, password);
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
-                result = getUserSimple(rs);
+//                result = getUserSimple(rs);
             }
 
         } catch (Exception ex) {
@@ -147,12 +96,12 @@ public class UserDaoImpl extends AbstractDAO implements UserDaoInter {
     @Override
     public User findyByEmail(String email) {
         User result = null;
-        try (Connection c = connect()) {
+        try ( Connection c = connect()) {
             PreparedStatement stmt = c.prepareStatement("select * from user where email=?");
             stmt.setString(1, email);
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
-                result = getUserSimple(rs);
+//                result = getUserSimple(rs);
             }
 
         } catch (Exception ex) {
@@ -164,106 +113,49 @@ public class UserDaoImpl extends AbstractDAO implements UserDaoInter {
     @Override
     public boolean updateUser(User u) {
 
-        try (Connection c = connect()) {
-
-//            Statement stmt = c.createStatement();
-            // PreparedStatement interface-i sql injeksinin qarsisini alir
-            PreparedStatement stmt = c.prepareStatement("UPDATE USER " +
-                    " SET name =? ," +
-                    " surname = ? , " +
-                    " phone =? , " +
-                    " email =? , " +
-                    " address =? , " +
-                    " profile_description =? , " +
-                    " birthdate =? , " +
-                    " birthplace_id =? , " +
-                    " nationality_id=? " +
-                    " WHERE " +
-                    " id =?");
-            stmt.setString(1, u.getName());
-            stmt.setString(2, u.getSurname());
-            stmt.setString(3, u.getPhone());
-            stmt.setString(4, u.getEmail());
-            stmt.setString(5, u.getAddress());
-            stmt.setString(6, u.getProfileDesc());
-            stmt.setDate(7, u.getBirthdate());
-            stmt.setInt(8, u.getBirthPlace().getId());
-            stmt.setInt(9, u.getNationality().getId());
-            stmt.setInt(10, u.getId());
-
-            return stmt.execute();
-
-        } catch (Exception ex) {
-            ex.printStackTrace();
-            return false;
-        }
+        EntityManager em = em();
+        em.getTransaction().begin();
+        em.merge(u);
+        em.getTransaction().commit();
+        em.close();
+        return true;
     }
 
     @Override
     public boolean removeUser(int id) {
 
-        try (Connection c = connect()) {
-            Statement stmt = c.createStatement();
-            return stmt.execute("delete from user where id=" + id);
-        } catch (Exception ex) {
-            ex.printStackTrace();
-            return false;
-        }
+        EntityManager em = em();
+        User u = em.find(User.class, id);
+        em.getTransaction().begin();
+        em.remove(u);
+        em.getTransaction().commit();
+        em.close();
+        return true;
     }
 
     @Override
     public User getById(int userId) {
-        User result = null;
-        try (Connection c = connect()) {
 
-            PreparedStatement stmt = c.prepareStatement("SELECT u.*, "
-                    + "n.nationality, "
-                    + "c.name AS birthplace "
-                    + "FROM user u LEFT JOIN country n ON u.nationality_id=n.id "
-                    + "LEFT JOIN country c ON u.birthplace_id=c.id where u.id=?");
-            stmt.setInt(1, userId);
-            stmt.execute();
-            ResultSet rs = stmt.getResultSet();
-
-            while (rs.next()) {
-
-                result = getUser(rs);
-
-            }
-
-//            rs.close();        // ResluSet closed
-//            stmt.close();      // Statement closed
-//            c.close();         // Connection closed   Connection close olarsa, diger 2-side close olur.( Kill )
-            // Ve Connection inter-i AutoCloseable oldugu ucun try with resource ede bilirik.
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
-        return result;
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("resumeappPU");
+        EntityManager em = emf.createEntityManager();
+        User u = em.find(User.class, userId);
+        em.close();
+        return u;
     }
 
     private static BCrypt.Hasher cyrpt = BCrypt.withDefaults();
 
     @Override
     public boolean addUser(User u) {
-
-        try (Connection c = connect()) {
-
-//            Statement stmt = c.createStatement();
-            // PreparedStatement interface-i sql injeksinin qarsisini alir
-            PreparedStatement stmt = c.prepareStatement("insert into user(name, surname, phone, email, password, profile_description) values (?, ?, ?, ?, ?, ?)");
-            stmt.setString(1, u.getName());
-            stmt.setString(2, u.getSurname());
-            stmt.setString(3, u.getPhone());
-            stmt.setString(4, u.getEmail());
-            stmt.setString(5, cyrpt.hashToString(4, u.getPassword().toCharArray()));
-            stmt.setString(6, u.getProfileDesc());
-
-            return stmt.execute();
-
-        } catch (Exception ex) {
-            ex.printStackTrace();
-            return false;
-        }
+        
+        u.setPassword(cyrpt.hashToString(4, u.getPassword().toCharArray()));
+        
+        EntityManager em = em();
+        em.getTransaction().begin();
+        em.persist(u);
+        em.getTransaction().commit();
+        em.close();
+        return true;
 
     }
 

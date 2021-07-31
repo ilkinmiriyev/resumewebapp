@@ -5,25 +5,41 @@
  */
 package com.mycompany.entity;
 
+import javax.persistence.*;
+import java.io.Serializable;
+
 /**
  *
  * @author Admin
  */
-public class UserSkill {
-    
+@Entity
+@Table(name = "user_skill")
+@NamedQueries({
+    @NamedQuery(name = "UserSkill.findAll", query = "SELECT u FROM UserSkill u"),
+    @NamedQuery(name = "UserSkill.findById", query = "SELECT u FROM UserSkill u WHERE u.id = :id"),
+    @NamedQuery(name = "UserSkill.findByPower", query = "SELECT u FROM UserSkill u WHERE u.power = :power")})
+public class UserSkill implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Basic(optional = false)
+    @Column(name = "id")
     private Integer id;
-    private User user;
+    @Column(name = "power")
+    private Integer power;
+    @JoinColumn(name = "skill_id", referencedColumnName = "id")
+    @ManyToOne
     private Skill skill;
-    private int power;
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
+    @ManyToOne
+    private User user;
 
     public UserSkill() {
     }
 
-    public UserSkill(Integer id, User user, Skill skill, int power) {
+    public UserSkill(Integer id) {
         this.id = id;
-        this.user = user;
-        this.skill = skill;
-        this.power = power;
     }
 
     public Integer getId() {
@@ -34,12 +50,12 @@ public class UserSkill {
         this.id = id;
     }
 
-    public User getUser() {
-        return user;
+    public Integer getPower() {
+        return power;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setPower(Integer power) {
+        this.power = power;
     }
 
     public Skill getSkill() {
@@ -50,18 +66,39 @@ public class UserSkill {
         this.skill = skill;
     }
 
-    public int getPower() {
-        return power;
+    public User getUser() {
+        return user;
     }
 
-    public void setPower(int power) {
-        this.power = power;
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    
+
+    @Override
+    public int hashCode() {
+        int hash = 0;
+        hash += (id != null ? id.hashCode() : 0);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        // TODO: Warning - this method won't work in the case the id fields are not set
+        if (!(object instanceof UserSkill)) {
+            return false;
+        }
+        UserSkill other = (UserSkill) object;
+        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
+            return false;
+        }
+        return true;
     }
 
     @Override
     public String toString() {
-        return "UserSkill{" + "id=" + id + ", user=" + user + ", skill=" + skill + ", power=" + power + '}';
+        return "com.mycompany.entity.UserSkill[ id=" + id + " ]";
     }
-    
     
 }

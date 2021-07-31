@@ -5,33 +5,72 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8c1bce66-61eb-4cda-bb40-167a68f3cf9f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__at_favre_lib_bcrypt_0_4_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__at_favre_lib_bytes_0_4_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_javaee_web_api_7_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_persistence_jakarta_persistence_2_2_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_persistence_javax_persistence_2_2_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_persistence_org_eclipse_persistence_antlr_2_7_7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_persistence_org_eclipse_persistence_asm_2_7_7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_persistence_org_eclipse_persistence_core_2_7_7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_persistence_org_eclipse_persistence_jpa_2_7_7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_persistence_org_eclipse_persistence_jpa_jpql_2_7_7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_persistence_org_eclipse_persistence_jpa_modelgen_processor_2_7_7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_persistence_org_eclipse_persistence_moxy_2_7_7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../resumewebapp/.idea/libraries/Java_EE_6_Java_EE_6.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ResumeDbApp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ResumeDbApp.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/dao/impl/CountryDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/dao/impl/CountryDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/dao/impl/EmploymentHistoryDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/dao/impl/EmploymentHistoryDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/dao/impl/SkillDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/dao/impl/SkillDaoImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/dao/impl/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/dao/impl/UserDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/dao/inter/UserDaoInter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/dao/inter/UserDaoInter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/dao/impl/UserSkillDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/dao/impl/UserSkillDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/dao/inter/AbstractDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/dao/inter/AbstractDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/dao/inter/CountryDaoInter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/dao/inter/CountryDaoInter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/dao/inter/EmploymentHistoryDaoInter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/dao/inter/EmploymentHistoryDaoInter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/dao/inter/SkillDaoInter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/dao/inter/SkillDaoInter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/dao/inter/UserSkillDaoInter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/dao/inter/UserSkillDaoInter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/entity/Country.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/entity/Country.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/entity/EmploymentHistory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/entity/EmploymentHistory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/entity/Skill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/entity/Skill.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ResumeDbApp-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/ResumeDbApp-1.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/entity/UserSkill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/entity/UserSkill.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/main/Context.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/main/Context.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ResumeDbApp-1.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/dao/impl/CountryDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mycompany/dao/impl/CountryDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/dao/impl/EmploymentHistoryDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mycompany/dao/impl/EmploymentHistoryDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/dao/impl/SkillDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mycompany/dao/impl/SkillDaoImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/dao/impl/UserDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mycompany/dao/impl/UserDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/dao/inter/UserDaoInter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mycompany/dao/inter/UserDaoInter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/dao/impl/UserSkillDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mycompany/dao/impl/UserSkillDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/dao/inter/AbstractDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mycompany/dao/inter/AbstractDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/entity/Country.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mycompany/entity/Country.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/entity/EmploymentHistory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mycompany/entity/EmploymentHistory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/entity/Skill.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mycompany/entity/Skill.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mycompany/entity/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/entity/UserSkill.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mycompany/entity/UserSkill.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mycompany/main/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../resumewebapp/.idea/artifacts/resumewebapp_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../resumewebapp/.idea/artifacts/resumewebapp_war_exploded.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../resumewebapp/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../resumewebapp/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../resumewebapp/src/main/java/com/company/resume/controller/UserDetailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../resumewebapp/src/main/java/com/company/resume/controller/UserDetailController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../resumewebapp/src/main/webapp/assets/css/test.css" beforeDir="false" afterPath="$PROJECT_DIR$/../resumewebapp/src/main/webapp/assets/css/users.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../resumewebapp/src/main/webapp/users.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../resumewebapp/src/main/webapp/users.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../resumewebapp/target/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resumewebapp/src/main/java/com/company/resume/filter/JspFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../resumewebapp/src/main/java/com/company/resume/filter/JspFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resumewebapp/src/main/java/com/company/resume/filter/SecurityFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../resumewebapp/src/main/java/com/company/resume/filter/SecurityFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resumewebapp/src/main/webapp/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../resumewebapp/src/main/webapp/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resumewebapp/src/main/webapp/userdetail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../resumewebapp/src/main/webapp/userdetail.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../resumewebapp/target/classes/com/company/resume/controller/UserDetailController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../resumewebapp/target/classes/com/company/resume/controller/UserDetailController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resumewebapp/target/classes/com/company/resume/filter/JspFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resumewebapp/target/classes/com/company/resume/filter/SecurityFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resumewebapp/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../resumewebapp/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resumewebapp/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../resumewebapp/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../resumewebapp/target/resumewebapp/WEB-INF/classes/com/company/resume/controller/UserDetailController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../resumewebapp/target/resumewebapp/WEB-INF/classes/com/company/resume/controller/UserDetailController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resumewebapp/target/resumewebapp/WEB-INF/classes/com/company/resume/filter/JspFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resumewebapp/target/resumewebapp/WEB-INF/classes/com/company/resume/filter/SecurityFilter.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../resumewebapp/target/resumewebapp/WEB-INF/lib/ResumeDbApp-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../resumewebapp/target/resumewebapp/WEB-INF/lib/ResumeDbApp-1.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../resumewebapp/target/resumewebapp/assets/css/test.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../resumewebapp/target/resumewebapp/assets/test.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../resumewebapp/target/resumewebapp/users.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../resumewebapp/target/resumewebapp/users.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resumewebapp/target/resumewebapp/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../resumewebapp/target/resumewebapp/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resumewebapp/target/resumewebapp/userdetail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../resumewebapp/target/resumewebapp/userdetail.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +88,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -56,13 +96,13 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.45083934" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
-  <component name="RunManager" selected="Application.UserDaoImpl">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="$PROJECT_DIR$/../../../../../../Program Files/Java/jdk-15.0.2" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -151,8 +191,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.UserDaoImpl" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.UserDaoImpl" />
       </list>
     </recent_temporary>
   </component>
@@ -180,6 +220,14 @@
       <workItem from="1622927597124" duration="640000" />
       <workItem from="1622970496439" duration="606000" />
       <workItem from="1623242865335" duration="10310000" />
+      <workItem from="1623392768440" duration="270000" />
+      <workItem from="1623856105081" duration="463000" />
+      <workItem from="1626980162621" duration="1364000" />
+      <workItem from="1627205502937" duration="2590000" />
+      <workItem from="1627287035975" duration="468000" />
+      <workItem from="1627374766791" duration="6254000" />
+      <workItem from="1627747421738" duration="1161000" />
+      <workItem from="1627750403818" duration="690000" />
     </task>
     <servers />
   </component>
@@ -196,5 +244,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

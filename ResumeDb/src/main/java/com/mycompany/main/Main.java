@@ -5,13 +5,8 @@
  */
 package com.mycompany.main;
 
-import com.mycompany.dao.inter.CountryDaoInter;
-import com.mycompany.dao.inter.SkillDaoInter;
 import com.mycompany.dao.inter.UserDaoInter;
-import com.mycompany.entity.Country;
 import com.mycompany.entity.User;
-
-import java.util.List;
 
 /**
  * @author AdminData Access Object
@@ -19,9 +14,13 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) throws Exception {
-//
-//        EmploymentHistoryDaoInter dao = Context.instanceEmploymentHistoryDao();
-//
+
+        UserDaoInter userDao = Context.instanceUserDao();
+        User u = userDao.getById(59);
+        System.out.println("Email: "+u.getEmail());
+        System.out.println("country: "+u.getBirthPlace().getName());
+
+
 
     }
 }

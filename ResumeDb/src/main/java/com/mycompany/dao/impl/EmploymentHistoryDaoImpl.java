@@ -9,6 +9,7 @@ import com.mycompany.dao.inter.AbstractDAO;
 import com.mycompany.dao.inter.EmploymentHistoryDaoInter;
 import com.mycompany.entity.EmploymentHistory;
 import com.mycompany.entity.User;
+
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;

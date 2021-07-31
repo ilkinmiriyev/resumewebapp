@@ -5,6 +5,9 @@
  */
 package com.mycompany.dao.inter;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
@@ -19,6 +22,23 @@ public abstract class AbstractDAO {
         String password = "123456";
         Connection c = DriverManager.getConnection(url, username, password);
         return c;
+    }
+
+    
+    
+    private static EntityManagerFactory emf = null;
+
+    public EntityManager em() {
+        if (emf == null) {
+            emf = Persistence.createEntityManagerFactory("resumappPU");
+        }
+        
+        EntityManager em=emf.createEntityManager();
+        return em;
+    }
+    
+    public static void closeEmf(){
+        emf.close();
     }
 
 }

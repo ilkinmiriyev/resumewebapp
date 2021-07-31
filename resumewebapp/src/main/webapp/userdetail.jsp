@@ -17,7 +17,7 @@
     <title>User JSP</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <link href="assets/css\test.css" rel="stylesheet">
+    <link href="assets/css/users.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/065a3a8248.js" crossorigin="anonymous"></script>
 </head>
 <body>

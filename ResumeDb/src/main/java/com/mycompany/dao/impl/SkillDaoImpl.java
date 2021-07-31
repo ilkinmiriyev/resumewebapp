@@ -8,6 +8,8 @@ package com.mycompany.dao.impl;
 import com.mycompany.dao.inter.AbstractDAO;
 import com.mycompany.dao.inter.SkillDaoInter;
 import com.mycompany.entity.Skill;
+
+import javax.persistence.EntityManager;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -21,8 +23,10 @@ import java.util.List;
  */
 public class SkillDaoImpl extends AbstractDAO implements SkillDaoInter {
 
+    
     @Override
     public List<Skill> getAll() {
+        EntityManager em = em();
         List<Skill> skills = new ArrayList<>();
         try ( Connection connect = connect()) {
             PreparedStatement stmt = connect.prepareStatement("SELECT * FROM skill");

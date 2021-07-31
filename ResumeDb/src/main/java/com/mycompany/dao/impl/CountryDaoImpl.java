@@ -8,11 +8,9 @@ package com.mycompany.dao.impl;
 import com.mycompany.dao.inter.AbstractDAO;
 import com.mycompany.dao.inter.CountryDaoInter;
 import com.mycompany.entity.Country;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import com.mysql.cj.xdevapi.Statement;
+
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 

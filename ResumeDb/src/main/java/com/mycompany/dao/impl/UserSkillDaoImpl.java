@@ -5,18 +5,15 @@
  */
 package com.mycompany.dao.impl;
 
-import com.mycompany.entity.Skill;
-import com.mycompany.entity.User;
-import com.mycompany.entity.UserSkill;
 import com.mycompany.dao.inter.AbstractDAO;
 import com.mycompany.dao.inter.UserSkillDaoInter;
+import com.mycompany.entity.UserSkill;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -31,8 +28,8 @@ public class UserSkillDaoImpl extends AbstractDAO implements UserSkillDaoInter {
         int skillId = rs.getInt("skill_id");
         String skillName = rs.getString("skill_name");
         int power = rs.getInt("power");
-        return new UserSkill(userSkillId, new User(userId), new Skill(skillId, skillName), power);
-
+//        return new UserSkill(userSkillId, new User(userId), new Skill(skillId, skillName), power);
+        return null;
     }
 
     @Override
@@ -41,22 +38,22 @@ public class UserSkillDaoImpl extends AbstractDAO implements UserSkillDaoInter {
         List<UserSkill> result = new ArrayList<>();
         try ( Connection c = connect()) {
 
-            PreparedStatement stmt = c.prepareStatement("SELECT " +
-"                   	u.*, " +
-"                  	n.nationality, " +
-"                 	c.NAME AS birthplace, " +
-"                  	us.id AS userSkill_id, " +
-"                  	us.skill_id, " +
-"                  	us.power, " +
-"			s.name AS skill_name" +
-"                       FROM " +
-"                    	USER u " +
-"                 	LEFT JOIN country n ON u.nationality_id = n.id " +
-"                   	LEFT JOIN country c ON u.birthplace_id = c.id " +
-"                  	LEFT JOIN user_skill us ON	u.id=us.user_id " +
-"										LEFT JOIN skill s on us.skill_id=s.id " +
-"                  WHERE " +
-"                  	u.id =?");
+            PreparedStatement stmt = c.prepareStatement("SELECT "
+                    + "                   	u.*, "
+                    + "                  	n.nationality, "
+                    + "                 	c.NAME AS birthplace, "
+                    + "                  	us.id AS userSkill_id, "
+                    + "                  	us.skill_id, "
+                    + "                  	us.power, "
+                    + "			s.name AS skill_name"
+                    + "                       FROM "
+                    + "                    	USER u "
+                    + "                 	LEFT JOIN country n ON u.nationality_id = n.id "
+                    + "                   	LEFT JOIN country c ON u.birthplace_id = c.id "
+                    + "                  	LEFT JOIN user_skill us ON	u.id=us.user_id "
+                    + "										LEFT JOIN skill s on us.skill_id=s.id "
+                    + "                  WHERE "
+                    + "                  	u.id =?");
 
             stmt.setInt(1, userId);
             stmt.execute();
@@ -110,13 +107,13 @@ public class UserSkillDaoImpl extends AbstractDAO implements UserSkillDaoInter {
 
     @Override
     public boolean updateUserSkill(UserSkill userSkill) {
-        
+
         boolean b = false;
         try ( Connection connect = connect()) {
             PreparedStatement stmt = connect.prepareStatement("UPDATE user_skill SET power=? WHERE id=?");
             stmt.setInt(1, userSkill.getPower());
             stmt.setInt(2, userSkill.getId());
-            
+
             b = stmt.execute();
 
         } catch (Exception ex) {
@@ -124,8 +121,5 @@ public class UserSkillDaoImpl extends AbstractDAO implements UserSkillDaoInter {
         }
         return b;
     }
-    
-    
-    
 
 }
