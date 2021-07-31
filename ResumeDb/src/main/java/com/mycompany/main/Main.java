@@ -22,6 +22,13 @@ public class Main {
 //
 //        EmploymentHistoryDaoInter dao = Context.instanceEmploymentHistoryDao();
 //
+        UserDaoInter userDao =Context.instanceUserDao();
+//        User u=new User(1, "Murad", "Teymurov", "email@gmail.com", "49747", "askcnsjanc", "sdci", null, null, null, null);
+//        u.setPassword("12345");
+//
+//        userDao.addUser(u);
+
+        System.out.println(userDao.getById(59).getName());
 
     }
 }

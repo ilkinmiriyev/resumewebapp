@@ -99,7 +99,8 @@ public class UserDetailController extends HttpServlet {
             u.setProfileDesc(profile);
             u.setNationality(nationality);
             userDao.updateUser(u);
-        } else if (action.equals("delete")) {
+        }
+        else if (action.equals("delete")) {
             userDao.removeUser(id);
         }
 

@@ -9,7 +9,7 @@
 <html>
 <head>
     <title>Login</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="assets/css/users.css" rel="stylesheet">
 </head>
 <body>
@@ -18,11 +18,11 @@
 <div class="container" >
     <div class="form-group col-md-4">
         <label>Email address</label>
-        <input type="email" class="form-control"  placeholder="Enter email" name="email">
+        <input type="email" class="form-control mycolor"  placeholder="Enter email" name="email">
     </div>
     <div class="form-group col-md-4">
         <label>Password</label>
-        <input type="password" class="form-control" placeholder="Password" name="password">
+        <input type="password" class="form-control mycolor" placeholder="Password" name="password">
     </div>
 
     <button type="submit" class="btn btn-primary" name="login">Login</button>

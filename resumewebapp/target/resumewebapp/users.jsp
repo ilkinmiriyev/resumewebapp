@@ -88,7 +88,7 @@
 
                     <form action="userdetail" method="GET" class="form-check-inline">
                         <input type="hidden" name="id" value="<%=u.getId()%>">
-                        <%--                        <input type="hidden" name="action" value="update">--%>
+                                                <input type="hidden" name="action" value="update">
 
                         <button class="btn " type="submit" value="uptdate">
                             <i class="fas fa-user-edit"></i>
